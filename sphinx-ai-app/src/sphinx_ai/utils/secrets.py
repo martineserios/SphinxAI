@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
-load_dotenv(dotenv_path="../.env", verbose=True)
+load_dotenv()
 
 def get_output_dir():
     return os.getenv("OUTPUT_DIR")

@@ -8,7 +8,7 @@ import duckdb as ddb
 import pandas as pd
 from polars import duration
 
-from sphinx_ai.features.pupils.pupil_classes import AimTracker, Athlete, Test
+from sphinx_ai.pupils.pupil_classes import AimTracker, Athlete, Test
 from sphinx_ai.utilities import ProgressBar
 
 

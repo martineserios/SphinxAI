@@ -47,4 +47,4 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-app = "streamlit run src/sphinx_ai/app.py:main"
+app = "streamlit run src/frontend/app.py"

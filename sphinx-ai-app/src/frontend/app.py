@@ -7,21 +7,20 @@ import uuid
 
 import cv2
 import duckdb as ddb
-import matplotlib.pyplot as plt
-import moviepy.editor as mpe
 import numpy as np
 import pandas as pd
 import streamlit as st
 from loguru import logger
 from moviepy.editor import AudioFileClip
+
+from sphinx_ai.audio import SpeechToText
 from sphinx_ai.config import (DB_LOCATION, INPUT_DIR, OUTPUT_DIR,
                               OUTPUT_TRANSCRIPTIONS_BUCKET_NAME)
-from sphinx_ai.features.audio import SpeechToText
-from sphinx_ai.features.eye_analyzer import EyeAnalyzer
-from sphinx_ai.features.gestures_analysis import GestureAnalyzer
-from sphinx_ai.features.head_analyzer import HeadAnalyzer
-from sphinx_ai.features.pose_estimator import PoseEstimator
-from sphinx_ai.features.pupils.load_data import upload_data
+from sphinx_ai.eye_analyzer import EyeAnalyzer
+from sphinx_ai.gestures_analysis import GestureAnalyzer
+from sphinx_ai.head_analyzer import HeadAnalyzer
+from sphinx_ai.pose_estimator import PoseEstimator
+from sphinx_ai.pupils.load_data import upload_data
 from sphinx_ai.utilities import ProgressBar, VideoProgressBar
 from sphinx_ai.utils.logging_config import logger
 

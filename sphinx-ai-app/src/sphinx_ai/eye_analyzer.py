@@ -4,10 +4,11 @@ import cv2
 import mediapipe as mp
 from mediapipe import solutions
 from mediapipe.framework.formats import landmark_pb2
-from sphinx_ai.features.videos.io import VideoCapture, VideoWriterFromCapture
-from sphinx_ai.features.videos.models import VideoModelAppInterface
+
 from sphinx_ai.utilities import VideoProgressBar
 from sphinx_ai.utils.logging_config import logger
+from sphinx_ai.videos.io import VideoCapture, VideoWriterFromCapture
+from sphinx_ai.videos.models import VideoModelAppInterface
 
 
 def get_optimal_font_scale(text, width, font, thickness=1):
