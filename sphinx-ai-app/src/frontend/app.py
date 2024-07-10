@@ -16,11 +16,11 @@ from moviepy.editor import AudioFileClip
 from sphinx_ai.audio import SpeechToText
 from sphinx_ai.config import (DB_LOCATION, INPUT_DIR, OUTPUT_DIR,
                               OUTPUT_TRANSCRIPTIONS_BUCKET_NAME)
-from sphinx_ai.eye_analyzer import EyeAnalyzer
-from sphinx_ai.gestures_analysis import GestureAnalyzer
-from sphinx_ai.head_analyzer import HeadAnalyzer
-from sphinx_ai.pose_estimator import PoseEstimator
-from sphinx_ai.pupils.load_data import upload_data
+from sphinx_ai.eye import EyeAnalyzer
+from sphinx_ai.gestures import GestureAnalyzer
+from sphinx_ai.head import HeadAnalyzer
+from sphinx_ai.pose import PoseEstimator
+from sphinx_ai.pupils_glasses.data import upload_data
 from sphinx_ai.utilities import ProgressBar, VideoProgressBar
 from sphinx_ai.utils.logging_config import logger
 
