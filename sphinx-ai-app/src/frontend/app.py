@@ -12,6 +12,7 @@ import pandas as pd
 import streamlit as st
 from loguru import logger
 from moviepy.editor import AudioFileClip
+from st_audiorec import st_audiorec
 
 from sphinx_ai.audio import SpeechToText
 from sphinx_ai.config import (DB_LOCATION, INPUT_DIR, OUTPUT_DIR,
@@ -23,6 +24,7 @@ from sphinx_ai.pose import PoseEstimator
 from sphinx_ai.pupils_glasses.data import upload_data
 from sphinx_ai.utilities import ProgressBar, VideoProgressBar
 from sphinx_ai.utils.logging_config import logger
+from sphinx_ai.videos.io import VideoCapture, VideoWriterFromCapture
 
 if "file_uploader_key" not in st.session_state:
     st.session_state["file_uploader_key"] = 100
