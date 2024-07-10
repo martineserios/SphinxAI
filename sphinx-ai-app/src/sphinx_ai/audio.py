@@ -4,8 +4,10 @@ import urllib
 from datetime import datetime
 
 import boto3  # type: ignore
-from botocore.exceptions import ClientError  # type: ignore
-from config import AWS_ACCESS_KEY_ID, AWS_REGION, AWS_SECRET_ACCESS_KEY
+from botocore.exceptions import ClientError
+
+from sphinx_ai.config import (AWS_ACCESS_KEY_ID, AWS_REGION,
+                              AWS_SECRET_ACCESS_KEY)
 from sphinx_ai.utils.logging_config import logger
 
 aws_logger = logger.bind(aws_key_id=AWS_ACCESS_KEY_ID, aws_secret_id=AWS_SECRET_ACCESS_KEY)

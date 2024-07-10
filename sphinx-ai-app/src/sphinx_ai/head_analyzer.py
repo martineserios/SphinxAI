@@ -4,10 +4,11 @@ from collections import Counter
 import cv2
 import mediapipe as mp
 import numpy as np
-from sphinx_ai.features.videos.io import VideoCapture, VideoWriterFromCapture
-from sphinx_ai.features.videos.models import VideoModelAppInterface
+
 from sphinx_ai.utilities import VideoProgressBar
 from sphinx_ai.utils.logging_config import logger
+from sphinx_ai.videos.io import VideoCapture, VideoWriterFromCapture
+from sphinx_ai.videos.models import VideoModelAppInterface
 
 
 class HeadAnalyzer(VideoModelAppInterface):

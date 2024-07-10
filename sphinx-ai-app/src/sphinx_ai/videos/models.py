@@ -1,9 +1,10 @@
 from abc import ABC, abstractmethod
 
 import cv2
-from sphinx_ai.features.videos.io import VideoCapture, VideoWriterFromCapture
+
 from sphinx_ai.utilities import VideoProgressBar
 from sphinx_ai.utils.logging_config import logger
+from sphinx_ai.videos.io import VideoCapture, VideoWriterFromCapture
 
 
 class VideoModelAppInterface(ABC):
