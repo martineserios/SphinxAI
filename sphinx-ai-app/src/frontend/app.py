@@ -758,10 +758,10 @@ def main_page(
                     return cv2.cvtColor(overlay, cv2.COLOR_BGR2RGB)
 
                 if test_name == 'Vision Periferica':
-                    backgorund_image = 'data/laminas/Vision periferica.jpeg'
+                    backgorund_image = 'src/frontend/resources/laminas/Vision periferica.jpeg'
                     st.image(plot_heatmap(fixations_list, backgorund_image))
                 elif test_name == 'Sacádicos':
-                    backgorund_image = 'data/laminas/Sacadicos.jpg'
+                    backgorund_image = 'src/frontend/resources/laminas/Sacadicos.jpg'
                     st.image(plot_heatmap(fixations_list, backgorund_image))
 
             col_d1, col_d2 = st.columns(2)

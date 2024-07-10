@@ -10,6 +10,7 @@ from polars import duration
 
 from sphinx_ai.pupils_glasses.elements import AimTracker, Athlete, Test
 from sphinx_ai.utilities import ProgressBar
+from sphinx_ai.utils.logging_config import logger
 
 
 def generate_id(input_string):
