@@ -11,7 +11,6 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 from loguru import logger
-from moviepy.editor import AudioFileClip
 from st_audiorec import st_audiorec
 
 from sphinx_ai.audio import SpeechToText
@@ -289,7 +288,7 @@ def main_page(
 
         def extract_audio(mp4_path):
             """
-            Extracts the audio from an MP4 file as an MP3 and saves it in the same directory.
+            Extracts the audio from an MP4 file as an MP3 using ffmpeg-python.
 
             Args:
                 mp4_path: The path to the input MP4 file.
@@ -304,14 +303,10 @@ def main_page(
             mp3_path = os.path.splitext(mp4_path)[0] + ".mp3"
 
             try:
-                # Load the MP4 file
-                audio_clip = AudioFileClip(mp4_path)
-
-                # Extract and write the audio as MP3
-                audio_clip.write_audiofile(mp3_path)
-
-                # Close the clip (important to avoid potential errors)
-                audio_clip.close()
+                import ffmpeg
+                stream = ffmpeg.input(mp4_path)
+                stream = ffmpeg.output(stream, mp3_path, acodec='libmp3lame')
+                ffmpeg.run(stream, overwrite_output=True, capture_stdout=True, capture_stderr=True)
             except Exception as e:
                 logger.info(f"Error extracting audio: {e}")
                 return None

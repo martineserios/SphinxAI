@@ -1,6 +1,7 @@
 ## SENSITIVE DATA
 resources/sensitive_data
 resources/
+*.mp4
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

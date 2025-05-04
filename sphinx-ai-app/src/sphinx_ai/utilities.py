@@ -1,4 +1,6 @@
 # import libraries
+import os
+import streamlit as st
 import subprocess
 from functools import reduce
 
@@ -6,13 +8,15 @@ import cv2
 import ffmpeg
 import numpy as np
 import streamlit as st
+
+from sphinx_ai.config import INPUT_DIR, OUTPUT_DIR
 from sphinx_ai.utils.logging_config import logger
 
 
 class VideoProgressBar:
-    def __init__(self, video_capture):
+    def __init__(self, video_capture, container):
         self.total_frames = video_capture.total_frames
-        self.progress_bar = st.progress(0)
+        self.progress_bar = container.progress(0)
         self.current_frame_number = 0
 
     def update(self):
@@ -34,9 +38,9 @@ class VideoProgressBar:
 
 
 class ProgressBar:
-    def __init__(self, iterable):
+    def __init__(self, iterable, container=st.container()):
         self.total = len(iterable)
-        self.progress_bar = st.progress(0)
+        self.progress_bar = container.progress(0)
         self.current_iteration = 0
 
     def update(self):
@@ -306,3 +310,15 @@ def draw_axis(img, yaw, pitch, roll, tdx=None, tdy=None, size=50, thickness=(2, 
     cv2.line(img, (int(tdx), int(tdy)), (int(x3), int(y3)), (255, 0, 0), thickness[2])
 
     return img
+
+
+def get_video_paths(input_video: str):
+    # create input and proc output video filename and path
+    input_filename = input_video
+    input_filepath = os.path.join(INPUT_DIR, input_filename)
+    processed_filename = os.path.splitext(input_video)[0] + "_proc.mp4"
+    processed_filepath = os.path.join(OUTPUT_DIR, processed_filename)
+    out = None
+
+    return input_filename, input_filepath, processed_filename, processed_filepath, out
+
