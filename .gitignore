@@ -1,6 +1,9 @@
 ## SENSITIVE DATA
 resources/sensitive_data
 resources/
+*.mp4
+secrets.toml
+client_secret_217884455561-p8blknss49hjjigghkpvbd102ujoci3e.apps.googleusercontent.com.json:
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -173,3 +176,7 @@ cython_debug/
 # Data files
 # DuckDB files
 *.duckdb
+
+# Google Cloud credentials
+sphinxai-*.json
+client_secret*.json
